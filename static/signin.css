@@ -1,0 +1,106 @@
+*{
+  font-family: Arial, Helvetica, sans-serif, Times, serif;
+}
+
+body
+{
+  background-image: url(../images/line_slanting_dark_50392_1920x1080.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+div.control1{
+width: 500px;
+height: 350px;
+
+background-image: url(../images/login_bg_img2.jpg);
+background-repeat: no-repeat;
+border-radius: 1%;
+opacity: 80%;
+margin-left: 420px;
+margin-right: 300px;
+margin-top: 155px;
+
+}
+
+h1{
+  text-align: center;
+  color: white;
+  font-size: xx-large;
+  padding-top: 5%;
+}
+
+.addressbar
+{
+  font-size: large;
+  padding-left: 2%;
+}
+
+.fieldbox
+{
+  width: 40%;
+  border-radius: 30px;
+  height: 25px;
+  padding-left: 2%;
+  margin-left: 30%;
+  text-align: left center;
+  margin-top: 2%;
+  margin-bottom: 1%;
+}
+
+#login_button
+{
+  margin-top: 6%;
+  margin-left: 40%;
+  width: 22%;
+  height: 30px;
+  background-color: rgb(9, 255, 0);
+  border-color: chartreuse;
+  border-radius: 20px;
+  color: black;
+  transition: 0.5s;
+  font-size: 15px;
+}
+
+#login_button:enabled:hover
+{
+  background-color: black;
+  color: white;
+}
+
+#login_button:disabled
+{
+  opacity: 50%;
+}
+
+.choice
+{
+  margin-left: 31%;
+  margin-top: 3%;
+  
+}
+
+.errormessage {
+  
+  display: none;
+  color: red;
+  margin-left: 32%;
+  
+}
+ 
+.fieldbox:focus
+{
+  outline: 2px solid cyan;
+}
+.fieldbox:invalid
+{
+  outline: 2px solid red;
+}
+.errormessage.active {
+  display: block;
+}
+
+.registration
+{
+  margin-left: 41%;
+  margin-top: 2%;
+}
