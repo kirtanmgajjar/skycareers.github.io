@@ -12,7 +12,7 @@
   <h1>
     Registration form
   </h1>
-    <form autocomplete='off'  method="post" action="/login">
+    <form autocomplete='off'  method="post" action="/register">
       <div class="space_inbetween">
         <div class="col1">
             <label class="label">First name</label>
@@ -52,6 +52,16 @@
         <div class="col1">
             <label class="label">Password</label>
             <input class='fieldbox' id ='password' type='password' name='password' required>
+        </div>
+        <div class="pswd_info">
+          <p class="info">Password must have:</p>
+          <ul>
+            <li id="length" class="invalid" style="color:#9e9fa1;">atleast 8 characters and maximum 14 characters</li>
+            <li id="capital" class="invalid" style="color:#9e9fa1;">atleast 1 uppercase</li>
+            <li id="letter" class="invalid" style="color:#9e9fa1;">atleast 1 lowercase</li>
+            <li id="number" class="invalid" style="color:#9e9fa1;">atleast 1 number</li>
+            <li id="special" class="invalid" style="color:#9e9fa1;">atleast 1 special char</li>
+          </ul>
         </div>
         <div class="col1">
             <label class="label">Re-Enter Password</label> 

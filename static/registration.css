@@ -122,6 +122,20 @@ h1
 
 }
 
+#pswd_info {
+    position: absolute;
+    bottom: 410px;
+    left: 1229px;
+    width: 144px;
+    padding: 5px;
+    background: #fefefe;
+    font-size: .750em;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px #ccc;
+    border: 1px solid #ddd;
+    height: 165px;
+}
+
 #login_button:enabled:hover
 {
   background-color: black;
