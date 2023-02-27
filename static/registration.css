@@ -42,12 +42,13 @@ h1
 .fieldbox
 {
     line-height: 35px;
-    background-color: #eeeeee;
+    background-color: #d1d1d1;
     box-shadow: #d4d4d4;
     border-radius: 5px;
     font-size: 16px;
+    border: 10px currentColor;
     color: #666;
-    opacity: 80%
+    opacity: 100%
     
 }
 
