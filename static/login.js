@@ -3,7 +3,7 @@ errormsg = document.querySelector(".errormessage");
 password = document.querySelector("#password");
 loginButton = document.querySelector("#login_button");
 
-emailCheck = /.[^()<>,;:"\\\[\]]+@+[a-zA-Z]+\.+[a-zA-z]/;
+emailCheck = /.[^()<>,;:"\\\{\}]+@+[a-zA-Z]+\.+[a-zA-z]/;
 //passwordCheck = /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&.?]).{7,12}/;
 loginButton.disabled = true;
 
@@ -12,7 +12,7 @@ password.addEventListener('input',toggle);
 
 
 function toggle(){
-    if(emailCheck.test(username.value) && password.value.length !=0 )
+    if(emailCheck.test(username.value) && password.value)
         loginButton.disabled = false;
     else
         loginButton.disabled = true;

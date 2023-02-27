@@ -107,7 +107,7 @@ h1
     color:black;
 }
 
-#login_button
+#signup_button
 {
   margin-top: 6%;
   margin-left: 33%;
@@ -137,13 +137,31 @@ h1
     height: 140px;
 }
 
-
+.cpswd_info {
+    display: none;
+    position: fixed;
+    bottom: 150px;
+    left: 705px;
+    width: 160px;
+    padding: 0px;
+    background: #fefefe;
+    font-size: .750em;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px #ccc;
+    border: 1px solid #ddd;
+    height: 48px;
+    font-size: 14px;
+    font-style: bold;
+    text-align: center;
+    color:#ff0000;
+}
 
 
 .info{
     font-size: 12px;
     font-style: bold;
 }
+
 
 .invalid{
     color:#ff0000;
@@ -152,24 +170,28 @@ h1
 .valid{
     color:#209720;
 }
+
 .pswd_info ul{
   padding: 0px;
 }
+
 .pswd_info li{
     list-style: none;
 }
 
-.pswd_info.active
+.pswd_info.active,.cpswd_info.active
 {
     display: block;
 }
-#login_button:enabled:hover
+
+
+#signup_button:enabled:hover
 {
   background-color: black;
   color: white;
 }
 
-#login_button:disabled
+#signup_button:disabled
 {
   opacity: 50%;
 }

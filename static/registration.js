@@ -1,6 +1,18 @@
+fname = document.querySelector("#fname");
+lname = document.querySelector("#lname");
+gender = document.querySelector("#gender");
+dob = document.querySelector("#dob");
+pnumber = document.querySelector("#pnumber");
+email = document.querySelector("#email");
 password = document.querySelector("#password");
+cpassword = document.querySelector("#cpassword");
 pwdinfo = document.querySelector(".pswd_info");
-passwordCheck = /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&.?]).{7,12}/;
+passwordCheck = /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&.?]).{7,14}/;
+cpwdinfo = document.querySelector(".cpswd_info");
+signup = document.querySelector("#signup_button");
+signup.disabled = true;
+emailCheck = /.[^()<>,;:|\{\}]+@+[a-zA-Z]+\.+[a-zA-z]/;
+pnumberCheck = /\d{10}/;
 
 password.addEventListener("focus",() => {
     pwdinfo.className = 'pswd_info active';
@@ -9,6 +21,22 @@ password.addEventListener("focus",() => {
 password.addEventListener("blur",() => {
     pwdinfo.className = 'pswd_info';
 });
+
+cpassword.addEventListener("focus",() => {
+    cpwdinfo.className = 'cpswd_info active';
+});
+
+cpassword.addEventListener("blur",() => {
+    cpwdinfo.className = 'cpswd_info';
+});
+
+cpassword.addEventListener("input",() => {
+    if(cpassword.value==password.value && password.value)
+    cpwdinfo.style.color="#209720";
+    else
+    cpwdinfo.style.color="#ff0000";
+});
+
 
 password.addEventListener("input",() => {
     numCheck = /(?=.*[0-9])/
@@ -40,5 +68,22 @@ password.addEventListener("input",() => {
         document.getElementById("length").className = 'valid';
     else
         document.getElementById("length").className = 'invalid';
-
 });
+
+fname.addEventListener('input',toggle);
+lname.addEventListener('input',toggle);
+gender.addEventListener('change',toggle);
+dob.addEventListener('input',toggle);
+pnumber.addEventListener('input',toggle);
+email.addEventListener('input',toggle);
+password.addEventListener('input',toggle);
+cpassword.addEventListener('input',toggle);
+
+
+function toggle(){
+    if(emailCheck.test(email.value) && passwordCheck.test(password.value) && cpassword.value==password.value 
+    && fname.value && lname.value && dob.value && pnumberCheck.test(pnumber.value) && gender.value)
+        signup.disabled = false;
+    else
+        signup.disabled = true;
+}

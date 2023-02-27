@@ -31,7 +31,7 @@
         <div class="col1">
             <label class="label">Gender</label> 
             <select class='selectbox' id ='gender' type='text' name='gender' required>
-              <option class="option" disabled selected>--Select--</option>
+              <option class="option" disabled selected value="">--Select--</option>
               <option class="option" value="Male">Male</option>
               <option class="option" value="Female">Female</option>
               <option class="option" value="Other">Other</option>
@@ -64,15 +64,16 @@
           </ul>
         </div>
         <div class="col1">
-            <label class="label">Re-Enter Password</label> 
-            <input class='fieldbox' id ='rpassword' type='text' name='rPassword' required>
+            <label class="label">Confirm Password</label> 
+            <input class='fieldbox' id ='cpassword' type='text' name='cpassword' required>
+        </div>
+        <div class="cpswd_info">
+          <p class="info2">Passwords must match</p>
         </div>
       </div>
       <div class="space_inbetween">
-        <button class='submit' type='submit' id='login_button'> 
-          <div>
+        <button class='submit' type='submit' id='signup_button'> 
             Submit
-          </div>
       </button>
       </div>
     </form>
