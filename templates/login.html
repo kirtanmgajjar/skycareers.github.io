@@ -8,16 +8,16 @@
     <link rel="stylesheet" href="../static/signin.css" >
 </head>
 <body>
-  <form autocomplete='off' class='form' method="post" action="/main">
+  <form autocomplete='off' class='form' method="post" action="/login">
     <div class='control1'>
       <h1>
         Sign In
       </h1>
-    <div class='control block-cube block-input'>
+    <div >
       <div class="addressbar"></div>
       <input class='fieldbox' id ='username' placeholder='Email' type='email' name='email' required>
         <div class="errormessage"></div>
-    <div class='control block-cube block-input'>
+    <di>
       <div class="addressbar"></div>
       <input class='fieldbox' id ='password' name='password' placeholder='Password' type='password' required>
     </div>
@@ -25,7 +25,7 @@
       <input id='checkbox' type="checkbox">Remember me
       </div>
     <div class="msg">{{ msg }}</div>
-    <button class='btn block-cube block-cube-hover' type='submit' id='login_button'> 
+    <button class='signin_button' type='submit' id='login_button'> 
       <div>
         Log In
       </div>
