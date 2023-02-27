@@ -144,6 +144,14 @@ h1
     font-size: 12px;
     font-style: bold;
 }
+
+.invalid{
+    color:#9ea19e;
+}
+
+.valid{
+    color:#209720;
+}
 .pswd_info ul{
   padding: 0px;
 }
