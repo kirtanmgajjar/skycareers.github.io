@@ -25,8 +25,7 @@ def login():
         if user:
             session["email"] = email
             session["password"] = password
-            print(session)
-            return render_template("main.html", email=email, password=password)
+            return redirect("/main")
         else:
             return render_template("login.html", msg=msg)
     return render_template("login.html")
