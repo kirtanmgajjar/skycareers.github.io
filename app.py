@@ -13,5 +13,5 @@ def loginpage():
 @app.route("/main", methods=["POST"])
 def main():
     email = request.form.get("email")
-    pasword = request.form.get("password")
+    password = request.form.get("password")
     return render_template("main.html", email=email, password=password)

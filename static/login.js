@@ -17,10 +17,10 @@ function toggle(){
         loginButton.disabled = true;
 }
 
-loginButton.addEventListener('click',function(event) {
-    event.preventDefault();
-    window.location.href = "../templates/main.html";
-});
+// loginButton.addEventListener('click',function(event) {
+//     event.preventDefault();
+//     window.location.href = "../templates/main.html";
+// });
 
 username.addEventListener('input',() => {
     if(emailCheck.test(username.value)){
