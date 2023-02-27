@@ -41,3 +41,11 @@ def logout():
     session["email"] = None
     session["password"] = None
     return redirect("/")
+
+@app.route("/register",methods=["GET","POST"])
+def register():
+    if request.method == "GET":
+        return render_template("registration.html")
+    if request.method == "POST":
+        
+        return redirect("/login")
