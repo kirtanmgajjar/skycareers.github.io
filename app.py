@@ -6,6 +6,12 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-@app.route("/login")
-def login():
+@app.route("/loginpage")
+def loginpage():
     return render_template("login.html")
+
+@app.route("/main", methods=["POST"])
+def main():
+    email = request.form.get("email")
+    pasword = request.form.get("password")
+    return render_template("main.html", email=email, password=password)

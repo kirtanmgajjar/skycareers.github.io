@@ -19,7 +19,7 @@ function toggle(){
 
 loginButton.addEventListener('click',function(event) {
     event.preventDefault();
-    window.location.href = "../HTML pages/main.html";
+    window.location.href = "../templates/main.html";
 });
 
 username.addEventListener('input',() => {

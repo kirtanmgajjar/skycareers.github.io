@@ -4,7 +4,7 @@
 
 body
 {
-  background-image: url(../images/line_slanting_dark_50392_1920x1080.jpg);
+  background-image: url(./line_slanting_dark_50392_1920x1080.jpg);
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
@@ -12,7 +12,7 @@ div.control1{
 width: 500px;
 height: 350px;
 
-background-image: url(../images/login_bg_img2.jpg);
+background-image: url(./login_bg_img2.jpg);
 background-repeat: no-repeat;
 border-radius: 1%;
 opacity: 80%;
