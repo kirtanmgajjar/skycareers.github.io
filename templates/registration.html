@@ -15,65 +15,56 @@
     <form autocomplete='off'  method="post" action="/login">
       <div class="space_inbetween">
         <div class="col1">
-            <label class="label">First name:</label>
+            <label class="label">First name</label>
             <input class='fieldbox' id ='fname' type='text' name='fname' required>
         </div>
         <div class="col1">
-            <label class="label">Last name:</label> 
+            <label class="label">Last name</label> 
             <input class='fieldbox' id ='lname' type='text' name='lname' required>
         </div>
       </div>
       <div class="space_inbetween">
         <div class="col1">
-            <label class="label">First name:</label>
-            <input class='fieldbox' id ='fname' type='text' name='fname' required>
+            <label class="label">Date of Birth</label>
+            <input class='datebox' id ='dob' type='date' name='dob' required>
         </div>
         <div class="col1">
-            <label class="label">Last name:</label> 
-            <input class='fieldbox' id ='lname' type='text' name='lname' required>
+            <label class="label">Gender</label> 
+            <select class='selectbox' id ='gender' type='text' name='gender' required>
+              <option class="option" disabled selected>--Select--</option>
+              <option class="option" value="Male">Male</option>
+              <option class="option" value="Female">Female</option>
+              <option class="option" value="Other">Other</option>
+            </select>
         </div>
       </div>
       <div class="space_inbetween">
         <div class="col1">
-            <label class="label">First name:</label>
-            <input class='fieldbox' id ='fname' type='text' name='fname' required>
+            <label class="label">Email ID</label>
+            <input class='fieldbox' id ='email' type='text' name='email' required>
         </div>
         <div class="col1">
-            <label class="label">Last name:</label> 
-            <input class='fieldbox' id ='lname' type='text' name='lname' required>
+            <label class="label">Phone Number</label> 
+            <input class='fieldbox' id ='pnumber' type='text' name='pnumber' required>
         </div>
       </div>
       <div class="space_inbetween">
         <div class="col1">
-            <label class="label">First name:</label>
-            <input class='fieldbox' id ='fname' type='text' name='fname' required>
+            <label class="label">Password</label>
+            <input class='fieldbox' id ='password' type='password' name='password' required>
         </div>
         <div class="col1">
-            <label class="label">Last name:</label> 
-            <input class='fieldbox' id ='lname' type='text' name='lname' required>
+            <label class="label">Re-Enter Password</label> 
+            <input class='fieldbox' id ='rpassword' type='text' name='rPassword' required>
         </div>
       </div>
-      
-      <br>
-      
-      
-        <br>
-        Date of Birth : <input class='fieldbox' id ='dob' type='text' name='dob' required>
-        <br>
-        Email ID : <input class='fieldbox' id ='email' type='text' name='email' required>
-        <br>
-        Phone Number : <input class='fieldbox' id ='pnumber' type='text' name='pnumber' required>
-        <br>
-        Password : <input class='fieldbox' id ='password' type='text' name='password' required>
-        <br>
-        Confirm Password : <input class='fieldbox' id ='cpassword' type='text' name='cpassword' required>
-        <br>
-      </div> 
-        <button class='signin_button' type='submit' id='login_button'> 
-            <div>
-              Submit
-            </div>
-          </button>
+      <div class="space_inbetween">
+        <button class='submit' type='submit' id='login_button'> 
+          <div>
+            Submit
+          </div>
+      </button>
+      </div>
     </form>
   </div>
 </body>

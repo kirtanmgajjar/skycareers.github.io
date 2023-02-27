@@ -39,6 +39,11 @@ h1
     padding-top:20px
 }
 
+.label::after{
+    content:"*";
+    color: red;
+}
+
 .fieldbox
 {
     line-height: 35px;
@@ -70,4 +75,34 @@ h1
     float: left;
     padding-left: 20px;
     padding-right: 20px;
+}
+
+.datebox{
+    width: 200px;
+    height: em;
+    line-height: 35px;
+    background-color: #d1d1d1;
+    box-shadow: #d4d4d4;
+    border-radius: 5px;
+    font-size: 16px;
+    border: 10px currentColor;
+    color: #666;
+    opacity: 100%
+}
+
+.selectbox{
+    width: 200px;
+    height: 2.3em;
+    line-height: 35px;
+    background-color: #d1d1d1;
+    box-shadow: #d4d4d4;
+    border-radius: 5px;
+    font-size: 16px;
+    border: 10px currentColor;
+    color: #666;
+    opacity: 100%
+}
+
+.option{
+    color:black;
 }
