@@ -103,10 +103,10 @@ h1{
 }
 
 
-.invalid_message
+.invalid_msg
 {
   margin-left: 31%;
+  margin-top: 2%;
   color: red;
   font-weight: bold;
-  text-shadow: 10px rgb(82, 82, 82);
 }

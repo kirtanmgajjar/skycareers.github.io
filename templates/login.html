@@ -22,9 +22,9 @@
       <input class='fieldbox' id ='password' name='password' placeholder='Password' type='password' required>
     </div>
     <div class="choice">
-      <input id='checkbox' type="checkbox">Remember me
+      <input id='checkbox' type="checkbox" onclick="showPass()">Show password
       </div>
-    <div class="msg">{{ msg }}</div>
+    <div class="invalid_msg">{{ msg }}</div>
     <button class='signin_button' type='submit' id='login_button'> 
       <div>
         Log In
