@@ -101,3 +101,12 @@ h1{
   margin-left: 41%;
   margin-top: 2%;
 }
+
+
+.invalid_message
+{
+  margin-left: 31%;
+  color: red;
+  font-weight: bold;
+  text-shadow: 10px rgb(82, 82, 82);
+}
