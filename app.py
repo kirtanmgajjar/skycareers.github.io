@@ -44,7 +44,7 @@ def logout():
 
 @app.route("/register",methods=["GET","POST"])
 def register():
-    
     if request.method == "POST":
+        
         return redirect("/login")
     return render_template("registration.html")
