@@ -110,15 +110,16 @@ h1
 #login_button
 {
   margin-top: 6%;
-  margin-left: 40%;
-  width: 22%;
-  height: 30px;
-  background-color: rgb(9, 255, 0);
-  border-color: chartreuse;
+  margin-left: 33%;
+  width: 30%;
+  height: 45px;
+  background-color: blue;
+  border-color: blue;
   border-radius: 20px;
-  color: black;
+  color: white;
   transition: 0.5s;
-  font-size: 15px;
+  font-size: 20px;
+
 }
 
 #login_button:enabled:hover
