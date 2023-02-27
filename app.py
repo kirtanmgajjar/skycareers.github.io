@@ -25,6 +25,7 @@ def login():
         if user:
             session["email"] = email
             session["password"] = password
+            print(session)
             return render_template("main.html", email=email, password=password)
         else:
             return render_template("login.html", msg=msg)
@@ -38,6 +39,6 @@ def main():
     
 @app.route("/logout")
 def logout():
-    session.pop("email",None)
-    session.pop("password",None)
+    session["email"] = None
+    session["password"] = None
     return redirect("/")
