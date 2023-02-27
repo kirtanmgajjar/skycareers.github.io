@@ -122,7 +122,7 @@ h1
 
 }
 
-#pswd_info {
+.pswd_info {
     position: absolute;
     bottom: 410px;
     left: 1229px;
@@ -136,6 +136,30 @@ h1
     height: 165px;
 }
 
+.pswd_info::before {
+    content: "b6";
+    position:absolute;
+    top:62px;
+    right:95%;
+    font-size:30px;
+    line-height:14px;
+    color:white;
+    text-shadow:none;
+    display:block;
+}
+.pswd_info {
+    display:none;
+}
+.info{
+    font-size: 12px;
+    font-style: bold;
+}
+.pswd_info ul{
+  padding: 0px;
+}
+.pswd_info li{
+    list-style: none;
+}
 #login_button:enabled:hover
 {
   background-color: black;
