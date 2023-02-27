@@ -11,7 +11,7 @@ passwordCheck = /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&.?]).{7,14}/;
 cpwdinfo = document.querySelector(".cpswd_info");
 signup = document.querySelector("#signup_button");
 signup.disabled = true;
-emailCheck = /.[^()<>,;:|\{\}]+@+[a-zA-Z]+\.+[a-zA-z]/;
+emailCheck = /.[^()<>,;:"\\\[\]]+@+[a-zA-Z]+\.+[a-zA-z]/;
 pnumberCheck = /\d{10}/;
 
 password.addEventListener("focus",() => {
