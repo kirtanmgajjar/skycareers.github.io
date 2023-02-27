@@ -42,7 +42,8 @@ h1
 .fieldbox
 {
     line-height: 35px;
-    background-color: ;
+    background-color: #eeeeee;
+    box-shadow: #d4d4d4;
     border-radius: 5px;
     font-size: 16px;
     color: #666;
