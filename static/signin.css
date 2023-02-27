@@ -91,10 +91,7 @@ h1{
 {
   outline: 2px solid cyan;
 }
-.fieldbox:invalid
-{
-  outline: 2px solid red;
-}
+
 .errormessage.active {
   display: block;
 }
