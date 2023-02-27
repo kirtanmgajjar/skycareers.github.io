@@ -7,11 +7,12 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-@app.route("/login", methods=["POST"])
-def login():
+
+@app.route("/main", methods=["POST"])
+def main():
     email = request.form.get("email")
     password = request.form.get("password")
-    msg="Invalid login credentials"
+    
     conn = sqlite3.connect('./static/login.db')
     c = conn.cursor()
     c.execute('SELECT * FROM login_details WHERE email_id=? AND password=?', (email, password))
