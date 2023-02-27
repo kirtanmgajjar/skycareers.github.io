@@ -125,16 +125,16 @@ h1
 .pswd_info {
     display: none;
     position: fixed;
-    bottom: 40px;
-    left: 480px;
-    width: 144px;
+    bottom: 60px;
+    left: 450px;
+    width: 160px;
     padding: 5px;
     background: #fefefe;
     font-size: .750em;
     border-radius: 5px;
     box-shadow: 0 1px 3px #ccc;
     border: 1px solid #ddd;
-    height: 165px;
+    height: 140px;
 }
 
 
@@ -146,7 +146,7 @@ h1
 }
 
 .invalid{
-    color:#9ea19e;
+    color:#ff0000;
 }
 
 .valid{
