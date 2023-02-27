@@ -106,3 +106,28 @@ h1
 .option{
     color:black;
 }
+
+#login_button
+{
+  margin-top: 6%;
+  margin-left: 40%;
+  width: 22%;
+  height: 30px;
+  background-color: rgb(9, 255, 0);
+  border-color: chartreuse;
+  border-radius: 20px;
+  color: black;
+  transition: 0.5s;
+  font-size: 15px;
+}
+
+#login_button:enabled:hover
+{
+  background-color: black;
+  color: white;
+}
+
+#login_button:disabled
+{
+  opacity: 50%;
+}
