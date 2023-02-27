@@ -2,7 +2,7 @@
   font-family: Arial, Helvetica, sans-serif, Times, serif;
 }
 
-body
+body.login_by
 {
   background-image: url(./line_slanting_dark_50392_1920x1080.jpg);
   background-attachment: fixed;
@@ -29,11 +29,6 @@ h1{
   padding-top: 5%;
 }
 
-.addressbar
-{
-  font-size: large;
-  padding-left: 2%;
-}
 
 .fieldbox
 {
@@ -110,3 +105,4 @@ h1{
   color: red;
   font-weight: bold;
 }
+
