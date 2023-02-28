@@ -55,6 +55,7 @@ def register():
         password = request.form['password']
         conn = sqlite3.connect('./static/login.db')
         db = conn.cursor()
+        
         db.execute("insert into login_details values (?,?)",(email,password))
         db.execute("insert into registration_details (email_id,first_name,last_name,phone_number,dob,gender) values(?,?,?,?,?,?);",(email,fname,lname,pnumber,dob,gender))
         conn.commit()
