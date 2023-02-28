@@ -52,5 +52,8 @@ def register():
         pnumber = request.form['pnumber']
         email = request.form['email']
         password = request.form['password']
-        return render_template("trial.html",a=fname,b=lname,c=gender,d=dob,e=email,f=password,g=pnumber)
+        db.execute("insert into registration_details (email_id,first_name,last_name,phone_number,dob,gender) values(?,?,?,?,?,?);",(email,fname,lname,pnumber,dob,gender))
+        db.execute("insert into login_details values (?,?)",(email,password))
+        #return render_template("trial.html",a=fname,b=lname,c=gender,d=dob,e=email,f=password,g=pnumber)
+        return redirect("/login")
     return render_template("registration.html")
