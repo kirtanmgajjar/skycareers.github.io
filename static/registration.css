@@ -5,10 +5,10 @@
 
 body
 {
-    background-color: red;
-    background-image: linear-gradient(to bottom left, rgb(194, 3, 252), red);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    background: url("bg2.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+    
 }
 
 .form
@@ -16,7 +16,8 @@ body
     width: 550px;
     height: 550px;
     border: 3px solid cyan;
-    background-color: whitesmoke;
+    background: transparent;
+    backdrop-filter: blur(15px);
     margin-left: 31%;
     margin-top: 4%;
     border-radius: 3%;
@@ -25,14 +26,14 @@ body
 h1
 {
     text-align: center;
-    color: rgb(104, 104, 104);
+    color: rgb(255, 255, 255);
     font-size: xx-large;  
 }
 
 .label 
 {
     font-size: 16px;
-    color: #555;
+    color: #fffafa;
     text-transform: capitalize;
     display: block;
     margin-bottom: 5px;
@@ -47,14 +48,13 @@ h1
 .fieldbox
 {
     line-height: 35px;
-    background-color: #d1d1d1;
+    background:transparent;
     box-shadow: #d4d4d4;
     border-radius: 5px;
     font-size: 16px;
-    border: 10px currentColor;
-    color: #666;
-    opacity: 100%
-    
+    border: 2px solid rgb(211, 208, 208);
+    color: #ffffff;
+
 }
 
 .space_inbetween::after
@@ -81,25 +81,25 @@ h1
     width: 200px;
     height: em;
     line-height: 35px;
-    background-color: #d1d1d1;
+    background:transparent;
     box-shadow: #d4d4d4;
     border-radius: 5px;
     font-size: 16px;
-    border: 10px currentColor;
-    color: #666;
-    opacity: 100%
+    border: 2px solid rgb(211, 208, 208);
+    color: #ffffff;
+    
 }
 
 .selectbox{
     width: 200px;
     height: 2.3em;
     line-height: 35px;
-    background-color: #d1d1d1;
+    background:transparent;
     box-shadow: #d4d4d4;
     border-radius: 5px;
     font-size: 16px;
-    border: 10px currentColor;
-    color: #666;
+    border: 2px solid rgb(211, 208, 208);
+    color: #ffffff;
     opacity: 100%
 }
 
@@ -125,8 +125,8 @@ h1
 .pswd_info {
     display: none;
     position: fixed;
-    bottom: 60px;
-    left: 450px;
+    bottom: 5px;
+    left: 60px;
     width: 160px;
     padding: 5px;
     background: #fefefe;
