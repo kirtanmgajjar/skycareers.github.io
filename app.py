@@ -7,8 +7,6 @@ app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
-conn = sqlite3.connect('./static/login.db')
-db = conn.cursor()
 
 @app.route("/")
 def index():
@@ -20,8 +18,11 @@ def login():
         email = request.form.get("email")
         password = request.form.get("password")
         msg = "Invalid login credentials"
+        conn = sqlite3.connect('./static/login.db')
+        db = conn.cursor()
         db.execute('SELECT * FROM login_details WHERE email_id=? AND password=?', (email, password))
         user = db.fetchone()
+        conn.close()
         if user:
             session["email"] = email
             session["password"] = password
@@ -52,8 +53,12 @@ def register():
         pnumber = request.form['pnumber']
         email = request.form['email']
         password = request.form['password']
-        db.execute("insert into registration_details (email_id,first_name,last_name,phone_number,dob,gender) values(?,?,?,?,?,?);",(email,fname,lname,pnumber,dob,gender))
+        conn = sqlite3.connect('./static/login.db')
+        db = conn.cursor()
         db.execute("insert into login_details values (?,?)",(email,password))
+        db.execute("insert into registration_details (email_id,first_name,last_name,phone_number,dob,gender) values(?,?,?,?,?,?);",(email,fname,lname,pnumber,dob,gender))
+        conn.commit()
+        conn.close()
         #return render_template("trial.html",a=fname,b=lname,c=gender,d=dob,e=email,f=password,g=pnumber)
         return redirect("/login")
     return render_template("registration.html")
