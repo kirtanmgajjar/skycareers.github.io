@@ -7,6 +7,9 @@ app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
+conn = sqlite3.connect('./static/login.db')
+db = conn.cursor()
+
 @app.route("/")
 def index():
     return render_template("index.html")
@@ -17,11 +20,8 @@ def login():
         email = request.form.get("email")
         password = request.form.get("password")
         msg = "Invalid login credentials"
-        conn = sqlite3.connect('./static/login.db')
-        c = conn.cursor()
-        c.execute('SELECT * FROM login_details WHERE email_id=? AND password=?', (email, password))
-        user = c.fetchone()
-        conn.close()
+        db.execute('SELECT * FROM login_details WHERE email_id=? AND password=?', (email, password))
+        user = db.fetchone()
         if user:
             session["email"] = email
             session["password"] = password
@@ -45,6 +45,12 @@ def logout():
 @app.route("/register",methods=["GET","POST"])
 def register():
     if request.method == "POST":
-        
-        return redirect("/login")
+        fname = request.form['fname']
+        lname = request.form['lname']
+        gender = request.form['gender']
+        dob = request.form['dob']
+        pnumber = request.form['pnumber']
+        email = request.form['email']
+        password = request.form['password']
+        return render_template("trial.html",a=fname,b=lname,c=gender,d=dob,e=email,f=password,g=pnumber)
     return render_template("registration.html")
