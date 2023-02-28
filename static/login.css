@@ -1,108 +1,148 @@
-*{
-  font-family: Arial, Helvetica, sans-serif, Times, serif;
-}
-
-body.login_by
+*
 {
-  background-image: url(./line_slanting_dark_50392_1920x1080.jpg);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-}
-div.control1{
-width: 500px;
-height: 350px;
-
-background-image: url(./login_bg_img2.jpg);
-background-repeat: no-repeat;
-border-radius: 1%;
-opacity: 80%;
-margin-left: 420px;
-margin-right: 300px;
-margin-top: 155px;
-
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins',sans-serif;
 }
 
-h1{
-  text-align: center;
-  color: white;
-  font-size: xx-large;
-  padding-top: 5%;
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background: url('bg3.jpg') no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
-
-.fieldbox
+.form-box
 {
-  width: 40%;
-  border-radius: 30px;
-  height: 25px;
-  padding-left: 2%;
-  margin-left: 30%;
-  text-align: left center;
-  margin-top: 2%;
-  margin-bottom: 1%;
+    position: relative;
+    width: 400px;
+    height: 450px;
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#login_button
+h2{
+    font-size: 2em;
+    color: rgb(212, 212, 212);
+    text-align: center;
+}
+
+.inputbox
 {
-  margin-top: 6%;
-  margin-left: 40%;
-  width: 22%;
-  height: 30px;
-  background-color: rgb(18, 224, 18);
-  border-color: chartreuse;
-  border-radius: 20px;
-  color: black;
-  transition: 0.5s;
-  font-size: 15px;
+    position: relative;
+    margin: 30px 0;
+    width: 310px;
+    border-bottom: 2px solid white;
+     
+}
+.inputbox label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 1em;
+    pointer-events: none;
+    transition: 0.5s;
+    
 }
 
-#login_button:enabled:hover
+
+.inputbox input
 {
-  background-color: black;
-  color: white;
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding:0 35px 0 5px;
+    color: white;
 }
 
-#login_button:disabled
+.inputbox ion-icon
 {
-  opacity: 50%;
+    position: absolute;
+    right: 8px;
+    color: white;
+    font-size: 1.2em;
+    top: 20px;
 }
 
-.choice
+.forget
 {
-  margin-left: 31%;
-  margin-top: 3%;
-  
+    margin: -15px 0 15px;
+    font-size: 0.8em;
+    color: white;
+    display: flex;
+    margin-top: 1%;
+    
 }
 
-.errormessage {
-  
-  display: none;
-  color: red;
-  margin-left: 32%;
-  
+.login_button{
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background: rgb(66, 91, 228);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: 0.5s;
 }
- 
-.fieldbox:focus
+
+.login_button:enabled:hover
 {
-  outline: 2px solid cyan;
+    background: rgb(70, 70, 70);
+    color: whitesmoke;
 }
 
-.errormessage.active {
-  display: block;
-}
-
-.registration
+.register
 {
-  margin-left: 41%;
-  margin-top: 2%;
+    font-size: 0.9em;
+    color: white;
+    margin: 25px 0 10px;
+    text-align: center;
 }
 
+.register p a
+{
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: 0.5s;
+}
+
+.register p a:hover
+{
+    text-decoration: underline;
+    color: black;
+    font-weight: 600;
+}
 
 .invalid_msg
 {
-  margin-left: 31%;
-  margin-top: 2%;
   color: red;
   font-weight: bold;
+  
+  position: absolute;
+  top: 400px;
+  opacity: 80%;
+  justify-content: center;
 }
-
+.login_button:disabled
+{
+    color: whitesmoke;
+    background: grey;
+    opacity: 50%;
+}
