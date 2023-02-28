@@ -5,37 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login to your career</title>
-    <link rel="stylesheet" href="../static/login.css" >
+    <link rel="stylesheet" href="login.css">
 </head>
-<body class="login_by">
-  <form autocomplete='off' class='form' method="post" action="/login">
-    <div class='control1'>
-      <h1>
-        Sign In
-      </h1>
-    <div >
-      <div class="addressbar"></div>
-      <input class='fieldbox' id ='username' placeholder='Email' type='email' name='email' required>
-        <div class="errormessage"></div>
-    <div>
-      <div class="addressbar"></div>
-      <input class='fieldbox' id ='password' name='password' placeholder='Password' type='password' required>
-    </div>
-    <div class="choice">
-      <input id='checkbox' type="checkbox" onclick="showPass()">Show password
-      </div>
-    <div class="invalid_msg">{{ msg }}</div>
-    <button class='signin_button' type='submit' id='login_button'> 
-      <div>
-        Log In
-      </div>
-    </button>
-    <div class="registration">
-      <a href="/register">Create Account</a>
-    </div>
-  </div>
-  </form>
-  <p id="p"></p>
-  <script src="../static/login.js"></script>
+<body>
+    <section>
+        <div class="form-box">
+            <div class="form-value">
+                <form autocomplete="off" action="/login" method="post">
+                    <h2>Login</h2>
+                    <div class="inputbox">
+                        <ion-icon name="mail-outline"></ion-icon>
+                        <input type="email" id="email" name="email" required>
+                        <label for="">Email</label>
+                    </div>
+                    <div class="inputbox">
+                        <ion-icon name="eye-off-outline" id="eye-off"></ion-icon>
+                        <input type="password" id="password" name="password" required>
+                        <label for="">Password</label>
+                        
+                    </div>
+                    <button class="login_button" id="login_button"type="submit">Log in</button>
+                    <div class="register" id="register" name="register">
+                        <p>Don't have an account: <a href="#">Register</a></p>
+                        
+                    </div>
+                </form>
+            </div>
+            <div class="invalid_msg">{{ msg }}</div>
+        </div>
+        
+    </section>
+    
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="login.js"></script>
 </body>
 </html>
