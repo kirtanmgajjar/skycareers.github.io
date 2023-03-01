@@ -34,7 +34,7 @@
               <option class="option" disabled selected value="">--Select--</option>
               <option class="option" value="Male">Male</option>
               <option class="option" value="Female">Female</option>
-              <option class="option" value="Other">Other</option>
+              <option class="option" value="Others">Others</option>
             </select>
         </div>
       </div>
@@ -51,7 +51,7 @@
       <div class="space_inbetween">
         <div class="col1">
           <label class="label">Country</label>
-          <select class="selectbox">
+          <select class="selectbox" name="country">
             <option disabled selected value="">--Select--</option>
             {% for i in name %}
             <option class="option" value={{ i }}>{{ i }}</option>
@@ -61,7 +61,7 @@
         <div class="col1">
           <label class="label">Resume</label>
           <div class="container">
-            <input type="file" class="upload-box" id="file">
+            <input type="file" class="upload-box" id="file" name="file">
           </div>
       </div>
       </div>
