@@ -14,7 +14,7 @@ body
 .form
 {
     width: 550px;
-    height: 650px;
+    height: max-content;
     border: 3px solid cyan;
     background: transparent;
     backdrop-filter: blur(15px);
@@ -91,7 +91,7 @@ h1
 }
 
 .selectbox{
-    width: 200px;
+    width: 205px;
     height: 2.3em;
     line-height: 35px;
     background:transparent;
@@ -194,4 +194,51 @@ h1
 #signup_button:disabled
 {
   opacity: 50%;
+}
+
+.tag-box :where(li, li ion-icon)
+{
+    display: flex;
+    align-items: center;
+}
+.tag-box ul
+{
+    display: flex;
+    width:200px;
+    flex-wrap: wrap;
+    padding: 7px;
+    margin: 10px 0;
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+}
+
+.tag-box ul li
+{
+    list-style: none;
+    margin: 4px 3px;
+    border-radius: 5px;
+    background: rgb(0, 247, 255);
+    padding: 5px 8px 5px 10px;
+    border: 1px solid rgb(156, 156, 156)
+}
+
+.tag-box ul li ion-icon
+{
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+    color: #808080;
+    font-size: 12px;
+    background: #dfdfdf;
+    margin-left: 8px;
+    border-radius: 50%;
+    justify-content: center;
+}
+.tag-box ul input
+{
+    flex: 1;
+    outline: none;
+    border: none;
+    padding: 5px;
+    font-size: 16px;
 }

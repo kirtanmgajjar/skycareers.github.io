@@ -14,6 +14,47 @@ signup.disabled = true;
 emailCheck = /.[^()<>,;:"\\\[\]]+@+[a-zA-Z]+\.+[a-zA-z]/;
 pnumberCheck = /\d{10}/;
 
+const ul = document.querySelector("ul"),
+input = ul.querySelector("input");
+rSkill = document.querySelector(".remove-skill");
+
+let tags = [];
+
+function createTag()
+{
+    ul.querySelectorAll("li").forEach(li => li.remove());      //removing duplicate tags
+    tags.slice().reverse().forEach(tag => {
+        let liTag = `<li>${tag}<ion-icon name="close-outline" onclick="remove(this, '${tag}')"></ion-icon></li>`;
+        ul.insertAdjacentHTML("afterbegin", liTag);
+    });
+}
+
+function remove(element, tag)
+{
+    let index = tags.indexOf(tag); //getting removing tag index
+    tags = [...tags.slice(0, index), ...tags.slice(index + 1)];//removing the selected tag
+    element.parentElement.remove();     //removing li of removed tag
+}
+
+function addTag(e)
+{
+    if(e.key == "Enter")
+    {
+        let tag = e.target.value.replace(/\s+/g, ' '); //remove unwanted spaces from user tag
+        if(tag.length > 0 && !tags.includes(tag))      //if tag len >1 and tag isn't exist already
+        {
+            tag.split(',').forEach(tag => {             //spliting each tag from comma
+                tags.push(tag);                         //adding each tag inside array
+                createTag();
+            });
+        }
+        e.target.value = "";
+    }
+    
+}
+input.addEventListener("keyup",addTag);
+
+
 password.addEventListener("focus",() => {
     pwdinfo.className = 'pswd_info active';
 });
