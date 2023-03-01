@@ -2,7 +2,6 @@ import sqlite3
 import random
 import string
 from  flask import Flask, render_template,request,redirect, url_for,session
-from fileinput import filename
 from flask_session import Session
 from werkzeug.utils import secure_filename
 
@@ -11,10 +10,9 @@ import os
 app = Flask(__name__)
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
+app.config["UPLOAD_PATH"] = "uploads"
 Session(app)
 
-resumeFolder = os.path.join(app.instance_path, 'resume_uploads')
-os.makedirs(resumeFolder,exist_ok=True)
 
 @app.route("/")
 def index():
@@ -63,13 +61,14 @@ def register():
         password = request.form['password']
         country = request.form['country']
         resumeFile = request.files['file']
-        """resumeName = "".join((random.choice(string.ascii_letters)) for x in range(15))
-        resumeName+=".pdf" """
-        resumeFile.save(resumeFile.filename)
+        resumeName = "".join((random.choice(string.ascii_letters)) for x in range(15))
+        resumeName+=".pdf"
+        resumeName = secure_filename(resumeName)
+        resumeFile.save(os.path.join(app.config["UPLOAD_PATH"],resumeName))
         conn = sqlite3.connect('./static/login.db')
         db = conn.cursor()
         db.execute("insert into login_details values (?,?)",(email,password))
-        db.execute("insert into registration_details (email_id,first_name,last_name,phone_number,dob,gender,country,resume) values(?,?,?,?,?,?,?,?);",(email,fname,lname,pnumber,dob,gender,country,resumeFile.filename))
+        db.execute("insert into registration_details (email_id,first_name,last_name,phone_number,dob,gender,country,resume) values(?,?,?,?,?,?,?,?);",(email,fname,lname,pnumber,dob,gender,country,resumeName))
         conn.commit()
         conn.close()
         #return render_template("trial.html",a=fname,b=lname,c=gender,d=dob,e=email,f=password,g=pnumber)
@@ -82,14 +81,6 @@ def register():
         name = [str(i)[2:-3] for i in db.fetchall()]
         return render_template("registration.html",name = name)
 
-@app.route("/try",methods=["GET","POST"])
-def trial():
-    if request.method == "POST":
-        f = request.files['files']
-        f.save(secure_filename(f.filename))
-        return redirect("/")
-        
-    return render_template("trial.html")
 
 
 if __name__=='__main__':

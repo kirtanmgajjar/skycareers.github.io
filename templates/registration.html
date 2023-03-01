@@ -12,7 +12,7 @@
   <h1>
     Registration form
   </h1>
-    <form autocomplete='off'  method="post" action="/register">
+    <form autocomplete='off'  method="post" action="/register" enctype="multipart/form-data">
       <div class="space_inbetween">
         <div class="col1">
             <label class="label">First name</label>
@@ -45,7 +45,7 @@
         </div>
         <div class="col1">
             <label class="label">Phone Number</label> 
-            <input class='fieldbox' id ='pnumber' type='number' name='pnumber' required>
+            <input class='fieldbox' id ='pnumber' type='number' name='pnumber' required >
         </div>
       </div>
       <div class="space_inbetween">
@@ -61,7 +61,7 @@
         <div class="col1">
           <label class="label">Resume</label>
           <div class="container">
-            <input type="file" class="upload-box" id="file" name="file">
+            <input type="file" class="upload-box" id="file" name="file" accept=".pdf">
           </div>
       </div>
       </div>
