@@ -226,3 +226,19 @@ ion-icon
 {
     height: 10px;
 }
+input[type="number"]::-webkit-outer-spin-button, 
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.invalidcred
+{
+    text-align: center;
+    margin-top: 22px;
+    color: #ff0000;
+    font-weight: 800;
+}
