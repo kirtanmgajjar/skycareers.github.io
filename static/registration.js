@@ -10,6 +10,7 @@ pwdinfo = document.querySelector(".pswd_info");
 passwordCheck = /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&.?]).{7,14}/;
 cpwdinfo = document.querySelector(".cpswd_info");
 signup = document.querySelector("#signup_button");
+selectBox = document.querySelector(".selectbox");
 signup.disabled = true;
 emailCheck = /.[^()<>,;:"\\\[\]]+@+[a-zA-Z]+\.+[a-zA-z]/;
 pnumberCheck = /\d{10}/;

@@ -55,11 +55,18 @@ def register():
         password = request.form['password']
         conn = sqlite3.connect('./static/login.db')
         db = conn.cursor()
-        
         db.execute("insert into login_details values (?,?)",(email,password))
         db.execute("insert into registration_details (email_id,first_name,last_name,phone_number,dob,gender) values(?,?,?,?,?,?);",(email,fname,lname,pnumber,dob,gender))
         conn.commit()
         conn.close()
         #return render_template("trial.html",a=fname,b=lname,c=gender,d=dob,e=email,f=password,g=pnumber)
         return redirect("/login")
-    return render_template("registration.html")
+    
+    if request.method == "GET":
+        conn = sqlite3.connect('./static/login.db')
+        db = conn.cursor()
+        db.execute("select * from country;")
+        name = [str(i)[2:-3] for i in db.fetchall()]
+        return render_template("registration.html",name = name)
+
+        

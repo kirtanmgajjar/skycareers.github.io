@@ -59,6 +59,9 @@
           <label class="label">Country</label>
           <select class="selectbox">
             <option disabled selected value="">--Select--</option>
+            {% for i in name %}
+            <option class="option" value={{ i }}>{{ i }}</option>
+            {% endfor %}
         </select>
         </div>
       </div>
