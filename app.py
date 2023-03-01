@@ -2,8 +2,10 @@ import sqlite3
 import random
 import string
 from  flask import Flask, render_template,request,redirect, url_for,session
+from fileinput import filename
 from flask_session import Session
 from werkzeug.utils import secure_filename
+
 import os
 
 app = Flask(__name__)
@@ -80,4 +82,15 @@ def register():
         name = [str(i)[2:-3] for i in db.fetchall()]
         return render_template("registration.html",name = name)
 
+@app.route("/try",methods=["GET","POST"])
+def trial():
+    if request.method == "POST":
+        f = request.files['files']
+        f.save(secure_filename(f.filename))
+        return redirect("/")
         
+    return render_template("trial.html")
+
+
+if __name__=='__main__':
+    app.run()
