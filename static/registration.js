@@ -15,45 +15,6 @@ signup.disabled = true;
 emailCheck = /.[^()<>,;:"\\\[\]]+@+[a-zA-Z]+\.+[a-zA-z]/;
 pnumberCheck = /\d{10}/;
 
-const ul = document.querySelector("ul"),
-input = ul.querySelector("input");
-rSkill = document.querySelector(".remove-skill");
-
-let tags = [];
-
-function createTag()
-{
-    ul.querySelectorAll("li").forEach(li => li.remove());      //removing duplicate tags
-    tags.slice().reverse().forEach(tag => {
-        let liTag = `<li>${tag}<ion-icon name="close-outline" onclick="remove(this, '${tag}')"></ion-icon></li>`;
-        ul.insertAdjacentHTML("afterbegin", liTag);
-    });
-}
-
-function remove(element, tag)
-{
-    let index = tags.indexOf(tag); //getting removing tag index
-    tags = [...tags.slice(0, index), ...tags.slice(index + 1)];//removing the selected tag
-    element.parentElement.remove();     //removing li of removed tag
-}
-
-function addTag(e)
-{
-    if(e.key == "Enter")
-    {
-        let tag = e.target.value.replace(/\s+/g, ' '); //remove unwanted spaces from user tag
-        if(tag.length > 0 && !tags.includes(tag))      //if tag len >1 and tag isn't exist already
-        {
-            tag.split(',').forEach(tag => {             //spliting each tag from comma
-                tags.push(tag);                         //adding each tag inside array
-                createTag();
-            });
-        }
-        e.target.value = "";
-    }
-    
-}
-input.addEventListener("keyup",addTag);
 
 
 password.addEventListener("focus",() => {
@@ -73,10 +34,16 @@ cpassword.addEventListener("blur",() => {
 });
 
 cpassword.addEventListener("input",() => {
-    if(cpassword.value==password.value && password.value)
-    cpwdinfo.style.color="#209720";
+    if(cpassword.value==password.value && password.value){
+    document.getElementById("checkpass").className = 'valid';
+    document.querySelector("#checkpass > ion-icon").name = 'checkmark-circle';
+    }
     else
-    cpwdinfo.style.color="#ff0000";
+    {
+        document.getElementById("checkpass").className = 'invalid';
+        document.querySelector("#checkpass > ion-icon").name = 'close-circle';
+    }
+    
 });
 
 
@@ -87,29 +54,49 @@ password.addEventListener("input",() => {
     specialCheck = /(?=.*[*.!@$%^&.?])/
 
     if(numCheck.test(password.value))
+    {
         document.getElementById("number").className = 'valid';
-    else
+        document.querySelector("#number > ion-icon").name = 'checkmark-circle';
+    }
+    else{
         document.getElementById("number").className = 'invalid';
-
-    if(smallCaseCheck.test(password.value))
+        document.querySelector("#number > ion-icon").name = 'close-circle';
+}
+    if(smallCaseCheck.test(password.value)){
         document.getElementById("letter").className = 'valid';
-    else
+        document.querySelector("#letter > ion-icon").name = 'checkmark-circle';
+    }
+    else{
         document.getElementById("letter").className = 'invalid';
+        document.querySelector("#letter > ion-icon").name = 'close-circle';
+}
 
-    if(capitalCaseCheck.test(password.value))
+    if(capitalCaseCheck.test(password.value)){
         document.getElementById("capital").className = 'valid';
-    else
+        document.querySelector("#capital > ion-icon").name = 'checkmark-circle';
+}
+    else{
         document.getElementById("capital").className = 'invalid';
+        document.querySelector("#capital > ion-icon").name = 'close-circle';
+}
 
-    if(specialCheck.test(password.value))
+    if(specialCheck.test(password.value)){
         document.getElementById("special").className = 'valid';
-    else
+        document.querySelector("#special > ion-icon").name = 'checkmark-circle';
+}
+    else{
         document.getElementById("special").className = 'invalid';
+        document.querySelector("#special > ion-icon").name = 'close-circle';
 
-    if(password.value.length>7 && password.value.length<15)
+}
+    if(password.value.length>7 && password.value.length<15){
         document.getElementById("length").className = 'valid';
-    else
+        document.querySelector("#length > ion-icon").name = 'checkmark-circle';
+}
+    else{
         document.getElementById("length").className = 'invalid';
+        document.querySelector("#length > ion-icon").name = 'close-circle';
+        }
 });
 
 fname.addEventListener('input',toggle);

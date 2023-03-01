@@ -50,12 +50,6 @@
       </div>
       <div class="space_inbetween">
         <div class="col1">
-          <label class="label">Skills</label>
-          <div class="tag-box">
-            <ul><input class="fieldbox" type="text"></ul>
-          </div>
-        </div>
-        <div class="col1">
           <label class="label">Country</label>
           <select class="selectbox">
             <option disabled selected value="">--Select--</option>
@@ -64,8 +58,13 @@
             {% endfor %}
         </select>
         </div>
+        <div class="col1">
+          <label class="label">Resume</label>
+          <div class="container">
+            <input type="file" class="upload-box" id="file">
+          </div>
       </div>
-
+      </div>
       <div class="space_inbetween">
         <div class="col1">
             <label class="label">Password</label>
@@ -74,11 +73,11 @@
         <div class="pswd_info">
           <p class="info">Password must have:</p>
           <ul>
-            <li id="length" class="invalid" ><ion-icon name="checkmark-circle"></ion-icon>Length 8-14 characters</li>
-            <li id="capital" class="invalid" >Atleast 1 uppercase</li>
-            <li id="letter" class="invalid" >Atleast 1 lowercase</li>
-            <li id="number" class="invalid" >Atleast 1 number</li>
-            <li id="special" class="invalid" >Atleast 1 special char</li>
+            <li id="length" class="invalid" ><ion-icon name="close-circle"></ion-icon>Length 8-14 characters</li>
+            <li id="capital" class="invalid" ><ion-icon name="close-circle"></ion-icon>Atleast 1 uppercase</li>
+            <li id="letter" class="invalid" ><ion-icon name="close-circle"></ion-icon>Atleast 1 lowercase</li>
+            <li id="number" class="invalid" ><ion-icon name="close-circle"></ion-icon>Atleast 1 number</li>
+            <li id="special" class="invalid" ><ion-icon name="close-circle"></ion-icon>Atleast 1 special char</li>
           </ul>
         </div>
         <div class="col1">
@@ -86,10 +85,12 @@
             <input class='fieldbox' id ='cpassword' type='text' name='cpassword' required>
         </div>
         <div class="cpswd_info">
-          <p class="info2">Passwords must match</p>
+          <ul>
+            <li class="invalid" id="checkpass"><ion-icon name="close-circle"></ion-icon>Passwords must match</li>
+          </ul>
         </div>
       </div>
-      <div class="space_inbetween">
+      <div class="space_between">
         <button class='submit' type='submit' id='signup_button'> 
             Submit
       </button>
