@@ -52,6 +52,8 @@ def logout():
 @app.route("/register",methods=["GET","POST"])
 def register():
     if request.method == "POST":
+        conn = sqlite3.connect('./static/login.db')
+        db = conn.cursor()
         fname = request.form['fname']
         lname = request.form['lname']
         gender = request.form['gender']
@@ -63,10 +65,15 @@ def register():
         resumeFile = request.files['file']
         resumeName = "".join((random.choice(string.ascii_letters)) for x in range(15))
         resumeName+=".pdf"
+        db.execute("select * from registration_details where resume=?;",(resumeName,))
+        resume = db.fetchone()
+        while(resume):
+            resumeName = "".join((random.choice(string.ascii_letters)) for x in range(15))
+            resumeName+=".pdf"
+            db.execute("select * from registration_details where resume=?;",(resumeName,))
+            resume = db.fetchone()
         resumeName = secure_filename(resumeName)
         resumeFile.save(os.path.join(app.config["UPLOAD_PATH"],resumeName))
-        conn = sqlite3.connect('./static/login.db')
-        db = conn.cursor()
         db.execute("insert into login_details values (?,?)",(email,password))
         db.execute("insert into registration_details (email_id,first_name,last_name,phone_number,dob,gender,country,resume) values(?,?,?,?,?,?,?,?);",(email,fname,lname,pnumber,dob,gender,country,resumeName))
         conn.commit()
