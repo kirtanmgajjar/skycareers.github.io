@@ -11,6 +11,8 @@ passwordCheck = /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&.?]).{7,14}/;
 cpwdinfo = document.querySelector(".cpswd_info");
 signup = document.querySelector("#signup_button");
 selectBox = document.querySelector(".selectbox");
+fileUploadBox = document.querySelector("#file");
+country = document.querySelector("#country");
 signup.disabled = true;
 emailCheck = /.[^()<>,;:"\\\[\]]+@+[a-zA-Z]+\.+[a-zA-z]/;
 pnumberCheck = /\d{10}/;
@@ -102,17 +104,25 @@ password.addEventListener("input",() => {
 fname.addEventListener('input',toggle);
 lname.addEventListener('input',toggle);
 gender.addEventListener('change',toggle);
+country.addEventListener('change',toggle);
 dob.addEventListener('input',toggle);
 pnumber.addEventListener('input',toggle);
 email.addEventListener('input',toggle);
 password.addEventListener('input',toggle);
 cpassword.addEventListener('input',toggle);
+fileUploadBox.addEventListener('change',toggle);
 
 
 function toggle(){
     if(emailCheck.test(email.value) && passwordCheck.test(password.value) && cpassword.value==password.value 
-    && fname.value && lname.value && dob.value && pnumberCheck.test(pnumber.value) && gender.value)
+    && fname.value && lname.value && dob.value && pnumberCheck.test(pnumber.value) && gender.value && 
+    country.value && fileUploadBox.value)
         signup.disabled = false;
     else
         signup.disabled = true;
 }
+
+fileUploadBox.addEventListener("change",() => {
+    if(fileUploadBox.value.split(".")[1]!="pdf")
+        fileUploadBox.value = "";
+});
