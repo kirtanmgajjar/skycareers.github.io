@@ -14,7 +14,7 @@ body
 .form
 {
     width: 552px;
-    height: 620px;
+    height: fit-content;
     border: 3px solid cyan;
     background: transparent;
     backdrop-filter: blur(15px);
@@ -238,7 +238,31 @@ input[type="number"] {
 .invalidcred
 {
     text-align: center;
-    margin-top: 22px;
+    margin-top: 20px;
     color: #ff0000;
     font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.login
+{
+    font-size: 1em;
+    color: white;
+    margin: 25px 0 10px;
+    text-align: center;
+}
+
+.login p a
+{
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: 0.5s;
+}
+
+.login p a:hover
+{
+    text-decoration: underline;
+    color: black;
+    font-weight: 600;
 }
