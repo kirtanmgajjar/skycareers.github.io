@@ -2,6 +2,7 @@ import sqlite3
 import random
 import string
 from  flask import Flask, render_template,request,redirect, url_for,session
+from fileinput import filename
 from flask_session import Session
 from werkzeug.utils import secure_filename
 
@@ -81,20 +82,17 @@ def register():
         resumeName = secure_filename(resumeName)
         resumeFile.save(os.path.join(app.config["UPLOAD_PATH"],resumeName))
         db.execute("insert into login_details values (?,?)",(email,password))
-        db.execute("insert into registration_details (email_id,first_name,last_name,phone_number,dob,gender,country,resume) values(?,?,?,?,?,?,?,?);",(email,fname,lname,pnumber,dob,gender,country,resumeName))
+        db.execute("insert into registration_details values(?,?,?,?,?,?,?,?,?);",(email,fname,lname,pnumber,dob,gender,country,resumeName,resumeFile.filename))
         conn.commit()
         conn.close()
         #return render_template("trial.html",a=fname,b=lname,c=gender,d=dob,e=email,f=password,g=pnumber)
         return redirect("/login")
-    
     if request.method == "GET":
         conn = sqlite3.connect('./static/login.db')
         db = conn.cursor()
         db.execute("select * from country;")
         name = [str(i)[2:-3] for i in db.fetchall()]
         return render_template("registration.html",name = name)
-
-
 
 if __name__=='__main__':
     app.run()
