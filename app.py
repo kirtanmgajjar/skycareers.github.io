@@ -86,7 +86,10 @@ def register():
         conn.commit()
         conn.close()
         #return render_template("trial.html",a=fname,b=lname,c=gender,d=dob,e=email,f=password,g=pnumber)
-        return redirect("/login")
+        #return redirect("/login")
+        db.execute("select * from country;")
+        name = [str(i)[2:-3] for i in db.fetchall()]
+        return render_template("registration.html",name = name,popup="<div id='popup'><iframe id='popup-content' src='popup.html'></iframe></div>")
     if request.method == "GET":
         conn = sqlite3.connect('./static/login.db')
         db = conn.cursor()
