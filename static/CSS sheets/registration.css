@@ -5,7 +5,7 @@
 
 body
 {
-    background: url("bg4.jpg") no-repeat;
+    background: url("../pics/bg4.jpg") no-repeat;
     background-position: center;
     background-size: cover;
     
@@ -124,6 +124,11 @@ h1
     transition: 0.5s;
     font-size: 20px;
 
+}
+
+#signup_button:disabled:hover
+{
+    cursor: default;
 }
 
 .pswd_info {

@@ -12,7 +12,7 @@ section{
     align-items: center;
     min-height: 100vh;
     width: 100%;
-    background: url('bg3.jpg') no-repeat;
+    background: url("../pics/bg3.jpg") no-repeat;
     background-position: center;
     background-size: cover;
 }
@@ -109,6 +109,10 @@ h2{
     color: whitesmoke;
 }
 
+.login_button:disabled:hover
+{
+    cursor: default;
+}
 .register
 {
     font-size: 0.9em;
