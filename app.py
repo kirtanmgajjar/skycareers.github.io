@@ -63,11 +63,17 @@ def register():
         password = request.form['password']
         country = request.form['country']
         resumeFile = request.files['file']
+        db.execute("select * from registration_details where email_id=?;",(email,))
+        user = db.fetchone()
+        if user:
+            db.execute("select * from country;")
+            name = [str(i)[2:-3] for i in db.fetchall()]
+            return render_template("registration.html",name = name,msg="Email already registered")
         resumeName = "".join((random.choice(string.ascii_letters)) for x in range(15))
         resumeName+=".pdf"
         db.execute("select * from registration_details where resume=?;",(resumeName,))
         resume = db.fetchone()
-        while(resume):
+        while resume:
             resumeName = "".join((random.choice(string.ascii_letters)) for x in range(15))
             resumeName+=".pdf"
             db.execute("select * from registration_details where resume=?;",(resumeName,))
