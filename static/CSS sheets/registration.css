@@ -128,7 +128,7 @@ h1
 
 #signup_button:disabled:hover
 {
-    cursor: default;
+    cursor: not-allowed;
 }
 
 .pswd_info {
@@ -274,7 +274,7 @@ input[type="number"] {
 
   
   #popup {
-    display: block;
+    display: none;
     position: fixed;
     top: 50%;
     left: 50%;

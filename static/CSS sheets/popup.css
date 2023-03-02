@@ -40,6 +40,7 @@ label, p
 
 button
 {
+    position: relative;
     background: blue;
     border: none;
     width: 100px;
@@ -49,4 +50,51 @@ button
     font-size: 20px;
     font-weight: 700;
     color: whitesmoke;
+    text-align: center;
+    transition-duration: 0.5s;
+}
+
+
+button:hover 
+{
+    transition-duration: 0.5s;
+    background: #03e748;
+    border: 2px solid green;
+    color: black;
+}
+  
+button:after 
+{
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: 5px;
+    left: 0;
+    top:0;
+    width: 100px;
+    height: 40px;
+    opacity: 0;
+    transition: all 0.5s;
+    box-shadow: 0 0 10px 40px red;
+}
+  
+button:active:after 
+{
+    box-shadow: 0 0 0 0 white;
+    position: absolute;
+    border-radius: 5px;
+    left: 0;
+    top:0;
+    opacity: 1;
+    transition: 0s;
+}
+  
+button:active 
+{
+    top: 1px;
+}
+img
+{
+    width: 80px;
+    height: 80px;
 }

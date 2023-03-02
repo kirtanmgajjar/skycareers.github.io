@@ -111,7 +111,7 @@ h2{
 
 .login_button:disabled:hover
 {
-    cursor: default;
+    cursor: not-allowed;
 }
 .register
 {
