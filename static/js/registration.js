@@ -127,18 +127,3 @@ fileUploadBox.addEventListener("change",() => {
         fileUploadBox.value = "";
 });
 
-const popupButton = document.getElementById("popup-button");
-const popupOverlay = document.getElementById("popup-overlay");
-const popup = document.getElementById("popup");
-const closeButton = document.getElementById("close-button");
-
-popupButton.addEventListener("click", function() {
-  popupOverlay.style.display = "block";
-  popup.style.display = "block";
-});
-
-closeButton.addEventListener("click", function() {
-  popupOverlay.style.display = "none";
-  popup.style.display = "none";
-  window.location.href = "/login";
-});
